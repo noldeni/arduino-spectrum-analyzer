@@ -70,7 +70,7 @@ LED Matrix Designed for Raspberry Pi
 
 Connect both devices ( Raspberry Pi and LED Matrix ) from the first pin pair of the left side (1 & 2) to the 13th pin pair (25 & 26). You see how it should look like below:
 
-image::images/joy-it-LEDMatrix.png[]
+image::joy-it-LEDMatrix.png[]
 
 ==== Code example
 
@@ -129,4 +129,4 @@ http://www.joy-it.net[www.joy-it.net]
 
 == Schematic
 
-image::images/arduino_spectrum_analyzer_-_schematic_fixed_1_JL7C9pr1Y5.png[Schematic]
+image::arduino_spectrum_analyzer_-_schematic_fixed_1_JL7C9pr1Y5.png[Schematic]
