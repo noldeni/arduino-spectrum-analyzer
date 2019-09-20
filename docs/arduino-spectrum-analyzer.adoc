@@ -1,0 +1,132 @@
+= Arduino Spectrum Analyzer
+Ingo Nolden dev@nolden.org
+:doctype: article
+:encoding: utf-8
+:lang: en
+:toc: left
+:numbered:
+:icons: font
+
+Quelle 1:: https://create.arduino.cc/projecthub/Shajeeb/32-band-audio-spectrum-visualizer-analyzer-902f51[Referenzprojekt]
+
+Quelle 2:: https://blog.yavilevich.com/2016/08/arduino-sound-level-meter-and-spectrum-analyzer/[Arduino sound level meter and spectrum analyzer]
+
+== LED-Matrix
+
+[WARNING]
+====
+Der Download Link zu den Schematics bei Joy-It funktioniert nicht!
+====
+
+=== Technische Daten
+
+.Technische Daten
+[width="100%",options="header"]
+|====================
+| Modell | LED Matrix Modul
+| Artikelnummer | RB-LEDMatrix
+| LEDs | 128 LEDs (8x16)
+| LED Farbe | Rot
+| LED Größe | 3mm
+| Kompatibel mit | Raspberry Pi Raspberry Pi B+, 2B, 3B
+Arduino
+| Abmessungen | 64,3 x 21,8 x 35mm
+| Lieferumfang | LED Modul
+| EAN | 4250236813325
+|====================
+
+Quelle:: http://anleitung.joy-it.net/wp-content/uploads/2016/12/RB-LEDMatrix-Datenblatt.pdf
+
+=== Anleitung
+
+==== Introduction
+
+LED Matrix Designed for Raspberry Pi
+
+==== Features
+
+* Supports any revision of Raspberry Pi (directly-plugable)
+* Driver : MAX7219
+* Matrix type : 8 × 8 common cathode LEDs
+* Color : red
+* Dimension : 64.3 × 35.0 × 26.5mm
+
+==== Interface
+
+
+[width="100%",options="header"]
+|====================
+| Pin No | Symbol | Description
+| 1, 17 | 3.3V | Power positive (3.3V input)
+| 2, 4 | 5V | Power positive (5V input)
+| 3, 5, 7, 8, 10, 11, 12, 13, 15, 16, 18, 21, 22, 26 | NC | NC
+| 6,9,14,20,25 | GND | ground
+| 19 | MOSI | data input
+| 23 | SCK | clock
+| 24 | CE0 | chip selection
+|====================
+
+==== Assemblage
+
+Connect both devices ( Raspberry Pi and LED Matrix ) from the first pin pair of the left side (1 & 2) to the 13th pin pair (25 & 26). You see how it should look like below:
+
+image::images/joy-it-LEDMatrix.png[]
+
+==== Code example
+
+* To download the code example click here: https://joyiteurope-my.sharepoint.com/:u:/g/personal/onedrive_joyiteurope_onmicrosoft_com/EVFo9Zc_MIBCq5JXSu1HZt4BZ9swdJ7Q1SNdfulz1D6cng?e=2aUw3H[Download]
+* To start the example , please make sure that you have installed the c-libraries on the Raspberry Pi.
+* If it‘s not installed yet, please download it from here: https://joyiteurope-my.sharepoint.com/:u:/g/personal/onedrive_joyiteurope_onmicrosoft_com/Efjdq1cMqCZFgOW8hWCBKV8BhniMDlbE6V1QTIQEtS7fow?e=DV7DWt[Download] version 1.50
+* Copy the compressed install package to your Raspberry Pi.
+* Now step into that folder via terminal and use the following command:
+
+[source,bash]
+----
+tar zxvf bcm2835-1.50.tar.gz
+----
+
+* Now step into the folder bcm2835 via command:
+
+[source,bash]
+----
+cd bcm2835-1.50
+----
+
+* The last step to finally install the c-libraries is:
+
+[source,bash]
+----
+./configure
+make
+sudo make check
+sudo make install
+----
+
+* If the libraries are installed you can switch to the folder „Dot_Test“ and compile the program „Dot_Test“:
+
+[source,bash]
+----
+make Dot_Test
+sudo ./Dot_Test
+----
+
+==== Resources
+
+http://anleitung.joy-it.net/wp-content/uploads/2016/12/RB-LEDMatrix-Datenblatt.pdf[Datasheets]
+
+http://cloud.joy-it.net/index.php/s/IotmvmmYWyq0ctE[Schematic]
+
+==== Support
+
+If you have any questions , or problems please contact us via e-mail, phone or support system.
+
+E-Mail:: service@joy-it.net
+Support-System:: http://support.joy-it.net
+Phone:: +49 (0)2845 98469 – 66 (11 AM —6 PM)
+
+Please visit our website for more information:
+http://www.joy-it.net[www.joy-it.net]
+
+== Schematic
+
+image::images/arduino_spectrum_analyzer_-_schematic_fixed_1_JL7C9pr1Y5.png[Schematic]
